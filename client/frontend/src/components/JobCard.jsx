@@ -22,7 +22,7 @@ const JobCard = ({ job }) => {
 
   return (
     <div className='jki'>
-  <div style={{ marginTop: '4.2rem' }} className='job-card'>
+  <div style={{ marginTop: '3.5rem' }}>
 
 
    <div
@@ -32,7 +32,8 @@ const JobCard = ({ job }) => {
     height: '330px',           // ✅ Fixed height
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    borderRadius:'10px'
   }}
 >
 

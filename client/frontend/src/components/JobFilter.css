@@ -20,7 +20,7 @@
   border: none;              /* ✅ Removed border */
   background-color: #fff;    /* ✅ Keep white background */
   border-radius: 8px;
-  width: 200px;
+  width: 230px;
   outline: none;             /* ✅ Optional: remove outline on focus */
 }
 
@@ -68,4 +68,68 @@
   font-size: 18px;
   color: #888;
   margin-top: 2px;
+}
+/* Wrapper that holds track and custom dots */
+.slider-track {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin-top: 4px;
+}
+
+/* Hidden native slider track */
+.salary-range.real-range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: transparent;
+  appearance: none;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.salary-range.real-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+.salary-range.real-range::-moz-range-thumb {
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+/* Decorative custom dots */
+.dot {
+  position: absolute;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border: 5px solid #000;
+  border-radius: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+}
+
+.dot.start {
+  left: 0%;
+}
+
+.dot.end {
+  transition: left 0.2s ease;
+}
+
+/* Decorative slider line */
+.line {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #222;
+  z-index: 1;
 }

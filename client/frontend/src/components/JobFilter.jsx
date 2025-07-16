@@ -9,7 +9,8 @@ const JobFilter = ({
   selectedSalary, setSelectedSalary
 }) => {
   return (
-    <div className="filter-container bg-white rounded px-4 py-3">
+    
+    <div className="filter-container bg-white rounded px-8 py-3">
       {/* Search */}
       <div className="filter-group">
        <svg
@@ -28,6 +29,7 @@ const JobFilter = ({
     strokeLinejoin="round"
   />
 </svg>
+
 
         <input
           type="text"
@@ -85,24 +87,37 @@ const JobFilter = ({
       <div className="vertical-divider"></div>
 
       {/* Salary */}
-      <div className="salary-section">
+   <div className="salary-section">
   <div className="salary-top-row">
     <label className="salary-label">Salary Per Month</label>
-    <span className="salary-display">₹10k - {(selectedSalary / 1000).toFixed(0)}k</span>
+    <span className="salary-display">₹10k - ₹{(selectedSalary / 1000).toFixed(0)}k</span>
   </div>
-  <input
-    type="range"
-    min={10000}
-    max={200000}
-    step={5000}
-    value={selectedSalary}
-    onChange={e => setSelectedSalary(Number(e.target.value))}
-    className="salary-range"
-  />
+  <div className="slider-track">
+    <div className="dot start"></div>
+    <div className="line"></div>
+    <div
+      className="dot end"
+      style={{ left: `${((selectedSalary - 10000) / (200000 - 10000)) * 100}%` }}
+    ></div>
+    <input
+      type="range"
+      min={10000}
+      max={200000}
+      step={5000}
+      value={selectedSalary}
+      onChange={e => setSelectedSalary(Number(e.target.value))}
+      className="salary-range real-range"
+    />
+  </div>
 </div>
 
 
+
+
+
+
     </div>
+    
   );
 };
 

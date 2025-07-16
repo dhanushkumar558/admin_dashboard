@@ -1,7 +1,7 @@
 /* Outer frame background */
 .navbar-frame {
   position: absolute;
-  width: 1440px;
+  width: 2440px;
   height: 214px;
   left: 50%;
   transform: translateX(-50%);
@@ -58,10 +58,10 @@
 
 /* Create Job Button */
 .create-job-btn {
-  background-color: #2E6EFF;
+ background: linear-gradient(180deg, #A128FF 0%, #6100AD 113.79%);
   color: white;
   padding: 10px 20px;
-  border-radius: 12px;
+  border-radius: 30px;
   font-size: 14px;
   font-weight: 600;
   border: none;
