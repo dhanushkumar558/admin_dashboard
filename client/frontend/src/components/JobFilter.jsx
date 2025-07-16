@@ -88,11 +88,11 @@ const JobFilter = ({
       <div className="salary-section">
   <div className="salary-top-row">
     <label className="salary-label">Salary Per Month</label>
-    <span className="salary-display">₹10k - ₹50k</span>
+    <span className="salary-display">₹10k - {(selectedSalary / 1000).toFixed(0)}k</span>
   </div>
   <input
     type="range"
-    min={50000}
+    min={10000}
     max={200000}
     step={5000}
     value={selectedSalary}
@@ -100,6 +100,7 @@ const JobFilter = ({
     className="salary-range"
   />
 </div>
+
 
     </div>
   );
