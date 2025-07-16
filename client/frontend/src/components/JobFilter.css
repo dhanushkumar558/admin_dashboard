@@ -1,0 +1,71 @@
+.filter-container {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1240px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  font-family: 'Satoshi Variable', sans-serif;
+}
+
+/* Inputs and selects */
+.search-input, .location-select, .type-select {
+  height: 36px;
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #686868;
+  border: none;              /* ✅ Removed border */
+  background-color: #fff;    /* ✅ Keep white background */
+  border-radius: 8px;
+  width: 200px;
+  outline: none;             /* ✅ Optional: remove outline on focus */
+}
+
+
+
+.salary-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  width: 300px;
+}
+
+.salary-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.salary-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+}
+
+.salary-display {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+}
+
+.salary-range {
+  width: 100%;
+}
+
+/* Align icon + field */
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icons */
+.filter-icon {
+  font-size: 18px;
+  color: #888;
+  margin-top: 2px;
+}
