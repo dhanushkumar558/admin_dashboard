@@ -97,12 +97,13 @@ function App() {
           selectedSalary={selectedSalary}
           setSelectedSalary={setSelectedSalary}
         />
+<div className="container px-0">
+  <div className="d-flex flex-wrap justify-content-start gap-4">
+  {jobs.map(job => <JobCard key={job.id} job={job} />)}
+</div>
 
-        <div className="row mt-3">
-          {filteredJobs.map(job => (
-            <JobCard key={job.id} job={job} />
-          ))}
-        </div>
+</div>
+
       </div>
 
       {showModal && (
