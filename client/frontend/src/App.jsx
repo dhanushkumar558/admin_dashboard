@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import JobCard from './components/JobCard';
 import JobModal from './components/JobModal';
 import JobFilter from './components/JobFilter';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './index.css';
 
 function App() {

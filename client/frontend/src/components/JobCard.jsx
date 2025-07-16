@@ -25,12 +25,42 @@ const JobCard = ({ job }) => {
 
       <div className="card h-100 shadow-sm">
         <div className="card-body d-flex flex-column">
-          <div className="d-flex justify-content-between align-items-center mb-2">
-            <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px', fontWeight: 'bold' }}>
-              {job.company[0]}
-            </div>
-            <span className="badge bg-light text-dark">{getTimeAgo(job.created_at)}</span>
-          </div>
+        <div className="position-relative mb-3">
+  {/* Logo */}
+  <div
+    className="d-flex align-items-center justify-content-center"
+    style={{
+      width: '83.46px',
+      height: '82px',
+      background: 'linear-gradient(180deg, #FEFEFD 0%, #F1F1F1 100%)',
+      border: '1px solid #FFFFFF',
+      boxShadow: '0px 0px 10.25px rgba(148, 148, 148, 0.25)',
+      borderRadius: '13.18px',
+      fontWeight: 'bold',
+      color: '#000',
+    }}
+  >
+    {job.company[0]}
+  </div>
+
+  {/* Time badge */}
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      background: '#B0D9FF',
+      borderRadius: '10px',
+      padding: '6px 12px',
+      fontSize: '14px',
+      fontWeight: 500,
+      color: '#000',
+    }}
+  >
+    {getTimeAgo(job.created_at)}
+  </div>
+</div>
+
 
           <h5 className="card-title">{job.title}</h5>
 
