@@ -23,7 +23,20 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
           <option>Intern</option>
           <option>PartTime</option>
         </select>
-        <input placeholder="Experience (e.g. 1-3 yr)" value={form.experience} onChange={e => setForm({ ...form, experience: e.target.value })} />
+       <input
+  placeholder="Experience (e.g. 1-3 yr)"
+  value={form.experience}
+  onChange={e => {
+    const val = e.target.value.replace(/\s*yr[s.]?$/i, ''); // Remove any "yr" as you type
+    setForm({ ...form, experience: val });
+  }}
+  onBlur={() => {
+    if (form.experience && !form.experience.toLowerCase().includes('yr')) {
+      setForm({ ...form, experience: `${form.experience} yr` });
+    }
+  }}
+/>
+
         <input placeholder="Salary Min (per month)" type="number" value={form.salaryMin} onChange={e => setForm({ ...form, salaryMin: e.target.value })} />
         <input placeholder="Salary Max (per month)" type="number" value={form.salaryMax} onChange={e => setForm({ ...form, salaryMax: e.target.value })} />
         <input type="date" value={form.deadline} onChange={e => setForm({ ...form, deadline: e.target.value })} />

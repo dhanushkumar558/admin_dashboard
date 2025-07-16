@@ -97,13 +97,18 @@ function App() {
           selectedSalary={selectedSalary}
           setSelectedSalary={setSelectedSalary}
         />
+
 <div className="container px-0">
-  <div className="d-flex flex-wrap justify-content-between" style={{ maxWidth: '1360px', margin: '0 auto' }}>
- {filteredJobs.map(job => <JobCard key={job.id} job={job} />)}
-
+  <div className="row gx-4 gy-4" style={{ maxWidth: '1360px', margin: '60px auto 0' }}>
+  {filteredJobs.map(job => (
+    <div className="col-md-3" key={job.id}>
+      <JobCard job={job} />
+    </div>
+  ))}
 </div>
 
 </div>
+
 
       </div>
 

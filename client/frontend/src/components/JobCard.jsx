@@ -21,10 +21,21 @@ const JobCard = ({ job }) => {
   const displaySalary = `₹${salaryLPA} LPA`;
 
   return (
-  <div style={{ marginTop: '4.5rem' }}>
+    <div className='jki'>
+  <div style={{ marginTop: '4.2rem' }} className='job-card'>
 
 
-     <div className="card h-100 shadow-sm"  style={{ width: '310px'}}>
+   <div
+  className="card shadow-sm job-card"
+  style={{
+    width: '310px',
+    height: '330px',           // ✅ Fixed height
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+  }}
+>
+
         <div className="card-body d-flex flex-column">
         <div className="position-relative mb-3">
   {/* Logo */}
@@ -102,10 +113,11 @@ const JobCard = ({ job }) => {
             ))}
           </ul>
 
-          <button className="btn btn-success mt-auto align-self-start">Apply Now</button>
+         <button className="btn btn-primary mt-auto w-100">Apply Now</button>
+
         </div>
       </div>
-    </div>
+    </div> </div>
   );
 };
 
