@@ -98,7 +98,7 @@ function App() {
           setSelectedSalary={setSelectedSalary}
         />
 <div className="container px-0">
-  <div className="d-flex flex-wrap justify-content-start gap-4">
+  <div className="d-flex flex-wrap justify-content-between" style={{ maxWidth: '1360px', margin: '0 auto' }}>
   {jobs.map(job => <JobCard key={job.id} job={job} />)}
 </div>
 
