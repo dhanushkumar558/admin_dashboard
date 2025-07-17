@@ -2,13 +2,13 @@
 .navbar-frame {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+ 
+  
   width: 100%;
   height: 214px;
   background: #FFFFFF;
   box-shadow: 0 0 14px rgba(198, 191, 191, 0.25);
- 
+  
 }
 
 /* Actual navbar rounded container */

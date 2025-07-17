@@ -108,8 +108,9 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
    {/* ← ✅ placeholder */}
     <option value="Internship">Internship</option>
     <option value="FullTime">FullTime</option>
-    <option value="Parttime">Internship</option>
-    <option value="Contract">PartTime</option>
+    <option value="Parttime">Parttime</option>
+    <option value="Contract">Contract</option>
+    
   </select>
 </div>
 
@@ -140,17 +141,18 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
                 />
               </div>
             </div>
-            <div className="col-md-6">
-              <label id="label-deadline" className="form-label">Application Deadline</label>
-              <input
-                className="form-control"
-                type="date"
-                value={form.deadline}
-                
-                onFocus={() => handleFocus('deadline')}
-                onChange={(e) => setForm({ ...form, deadline: e.target.value })}
-              />
-            </div>
+           <div className="col-md-6">
+  <label id="label-deadline" className="form-label">Application Deadline</label>
+  <input
+    className="form-control"
+    type="date"
+    value={form.deadline || ''}
+    onFocus={() => handleFocus('deadline')}
+    onChange={(e) => setForm({ ...form, deadline: e.target.value })}
+    placeholder="" // this line is optional, type="date" usually ignores it
+  />
+</div>
+
           </div>
 
           {/* Experience */}

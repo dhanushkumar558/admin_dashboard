@@ -47,15 +47,17 @@ function App() {
 
   // Filtering logic
   useEffect(() => {
-    const filtered = jobs.filter(job => {
-      const salaryMonthly = job.salary_max / 12;
-      return (
-        (!searchQuery || job.title.toLowerCase().includes(searchQuery.toLowerCase())) &&
-        (!selectedLocation || job.location === selectedLocation) &&
-        (!selectedType || job.type === selectedType) &&
-        (salaryMonthly >= selectedSalary)
-      );
-    });
+   const filtered = jobs.filter(job => {
+  const salaryMonthly = job.salary_max / 12;
+
+  return (
+    (!searchQuery || job.title.toLowerCase().includes(searchQuery.toLowerCase())) &&
+    (!selectedLocation || job.location.toLowerCase() === selectedLocation.toLowerCase()) &&
+    (!selectedType || job.type.toLowerCase() === selectedType.toLowerCase()) &&
+    (salaryMonthly >= selectedSalary)
+  );
+});
+
     setFilteredJobs(filtered);
   }, [jobs, searchQuery, selectedLocation, selectedType, selectedSalary]);
 
@@ -100,11 +102,11 @@ function App() {
 
 <div className="container px-0">
   <div className="row gx-4 gy-4" style={{ maxWidth: '1360px', margin: '60px auto 0' }}>
-  {filteredJobs.map(job => (
-    <div className="col-md-3" key={job.id}>
-      <JobCard job={job} />
-    </div>
-  ))}
+{filteredJobs.map((job, index) => (
+  <div className="col-md-3" key={job.id}>
+    <JobCard job={job} index={index} />
+  </div>
+))}
 </div>
 
 </div>
