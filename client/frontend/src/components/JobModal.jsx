@@ -64,6 +64,7 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
               <label id="label-title" className="form-label">Job Title</label>
               <input
                 className="form-control"
+                 placeholder="Eg. Full Stack Developer"
                 value={form.title}
                 onFocus={() => handleFocus('title')}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
