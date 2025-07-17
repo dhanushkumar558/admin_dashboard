@@ -1,9 +1,9 @@
 .filter-container {
   position: absolute;
   top: 130px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1240px;
+ 
+
+  
   display: flex;
   gap: 24px;
   align-items: flex-start;
