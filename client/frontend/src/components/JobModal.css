@@ -125,3 +125,7 @@
 .input-with-icon input {
   padding-left: 40px;
 }
+/* Optional: if you want slightly better spacing control */
+button span {
+  margin-left: 4px;
+}

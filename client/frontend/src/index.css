@@ -46,3 +46,25 @@ select.form-select.rounded-field {
   border-radius: 10px !important; /* Increase for more curve */
   border: 1px solid #333 !important; /* Dark border */
 }
+.save-draft-btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 60px;
+  gap: 10px;
+  position: absolute;
+  width: 232px;
+  height: 59px;
+  left: 40px;
+  top: 683px;
+  background: #ffffff;
+  border: 1.5px solid #222222;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  right: 10%;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+}
