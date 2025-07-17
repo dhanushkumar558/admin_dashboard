@@ -1,36 +1,36 @@
 /* Outer frame background */
 .navbar-frame {
   position: absolute;
-  width: 2440px;
-  height: 214px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  top: 0px;
-
+  width: 2440px;
+  height: 214px;
   background: #FFFFFF;
-  box-shadow: 0px 0px 14px rgba(198, 191, 191, 0.25);
+  box-shadow: 0 0 14px rgba(198, 191, 191, 0.25);
 }
 
 /* Actual navbar rounded container */
 .navbar-main {
-  box-sizing: border-box;
   position: absolute;
-  width: 890px;
-  height: 80px;
+  top: 21px;
   left: 50%;
   transform: translateX(-50%);
-  top: 21px;
+  width: 890px;
+  height: 80px;
 
   background: #FFFFFF;
   border: 1px solid #FCFCFC;
-  box-shadow: 0px 0px 20px rgba(127, 127, 127, 0.15);
   border-radius: 122px;
+  box-shadow: 0 0 20px rgba(127, 127, 127, 0.15);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+
+  font-family: 'Satoshi Variable', sans-serif;
 }
 
 /* Logo */
@@ -50,15 +50,31 @@
 }
 
 .nav-links li {
+  width: auto;
+  height: 22px;
+
+  font-family: 'Satoshi Variable', sans-serif;
+  font-style: normal;
   font-weight: 500;
-  font-size: 15px;
-  color: #333;
+  font-size: 16px;
+  line-height: 22px;
+  color: #303030;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
   cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-links li:hover {
+  color: #6100AD;
 }
 
 /* Create Job Button */
 .create-job-btn {
- background: linear-gradient(180deg, #A128FF 0%, #6100AD 113.79%);
+  background: linear-gradient(180deg, #A128FF 0%, #6100AD 113.79%);
   color: white;
   padding: 10px 20px;
   border-radius: 30px;
@@ -67,4 +83,10 @@
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(46, 110, 255, 0.3);
+  transition: all 0.25s ease;
+}
+
+.create-job-btn:hover {
+  background: linear-gradient(180deg, #8F1FE0 0%, #4D0092 113.79%);
+  box-shadow: 0 6px 16px rgba(97, 0, 173, 0.35);
 }

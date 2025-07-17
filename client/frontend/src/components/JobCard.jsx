@@ -53,7 +53,22 @@ const JobCard = ({ job }) => {
       color: '#000',
     }}
   >
+    {job.logo_url ? (
+  <img
+    src={job.logo_url}
+    alt={`${job.company} logo`}
+    style={{
+      maxWidth: '80%',
+      maxHeight: '80%',
+      objectFit: 'contain',
+    }}
+  />
+) : (
+  <span style={{ fontWeight: 'bold', color: '#000' }}>
     {job.company[0]}
+  </span>
+)}
+
   </div>
 
   {/* Time badge */}
