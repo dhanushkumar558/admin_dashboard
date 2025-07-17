@@ -71,7 +71,7 @@ const Navbar = ({ onCreateClick }) => {
           <li>Home</li>
           <li>Find Jobs</li>
           <li>Find Talents</li>
-          <li>About</li>
+          <li>About us</li>
           <li>Testimonials</li>
         </ul>
 
