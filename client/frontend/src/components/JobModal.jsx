@@ -93,6 +93,9 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
                 onChange={(e) => setForm({ ...form, location: e.target.value })}
               />
             </div>
+
+
+            
     <div className="col-md-6">
   <label id="label-type" className="form-label">Job Type</label>
   <select
@@ -102,10 +105,10 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
     onChange={(e) => setForm({ ...form, type: e.target.value })}
   >
    {/* ← ✅ placeholder */}
-       <option value="Internship">Internship</option>
+    <option value="Internship rounded-field">Internship</option>
     <option value="FullTime">FullTime</option>
     <option value="Parttime">Intern</option>
-    <option value="Contract">PartTime</option>
+    <option value="Contract rounded-field">PartTime</option>
   </select>
 </div>
 

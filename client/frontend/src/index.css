@@ -42,3 +42,7 @@ select.form-select.rounded-field {
   background-size: 1em;
   padding-right: 2rem;
 }
+.form-select .rounded-field {
+  border-radius: 10px !important; /* Increase for more curve */
+  border: 1px solid #333 !important; /* Dark border */
+}
