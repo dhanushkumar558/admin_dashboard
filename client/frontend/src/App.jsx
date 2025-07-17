@@ -34,7 +34,7 @@ function App() {
   // Fetch jobs from backend
   const fetchJobs = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/jobs');
+      const res = await axios.get('https://dashboard.boltxgaming.com/api/jobs');
       setJobs(res.data);
     } catch (err) {
       console.error('Error fetching jobs:', err);
@@ -62,7 +62,7 @@ function App() {
   // Handle submit
   const handleSubmit = async (formData) => {
     try {
-      await axios.post('http://localhost:5000/api/jobs', formData);
+      await axios.post('https://dashboard.boltxgaming.com/api/jobs', formData);
       setForm({
         title: '',
         company: '',
