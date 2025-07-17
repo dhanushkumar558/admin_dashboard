@@ -107,7 +107,7 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
    {/* ← ✅ placeholder */}
     <option value="Internship">Internship</option>
     <option value="FullTime">FullTime</option>
-    <option value="Parttime">Intern</option>
+    <option value="Parttime">Internship</option>
     <option value="Contract">PartTime</option>
   </select>
 </div>
