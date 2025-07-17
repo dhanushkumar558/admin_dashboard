@@ -13,8 +13,32 @@ body {
   font-weight: bold;
   transition: box-shadow 0.2s ease;
 }
+/* Apply dark border to all input and select fields */
+.form-control,
+.form-select {
+  border: 1px solid #333 !important; /* dark gray/black border */
+}
 
-.custom-select:focus {
-  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25); /* Optional focus glow */
-  font-weight: bold;
+/* Remove blue glow when focused */
+.form-control:focus,
+.form-select:focus {
+  border-color: #333 !important;
+  box-shadow: none;
+  outline: none;
+}
+
+
+/* Custom rounded border */
+.rounded-field {
+  border-radius: 0.5rem;
+}
+
+/* Style dropdown items with rounded border */
+select.form-select.rounded-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 140 140' width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='30,50 70,90 110,50' fill='none' stroke='%23999' stroke-width='15' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+  padding-right: 2rem;
 }
