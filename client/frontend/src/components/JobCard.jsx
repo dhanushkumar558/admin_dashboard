@@ -27,7 +27,7 @@ const displaySalary = `${salaryLPA}LPA`;
         className="card shadow-sm job-card"
         style={{
           width: '310px',
-          height: '310px',
+          height: '320px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -111,8 +111,12 @@ const displaySalary = `${salaryLPA}LPA`;
                 }}
               />
               <span>{displaySalary}</span>
+             
+              
             </div>
+          
           </div>
+          
 
           {/* Description */}
           <ul
