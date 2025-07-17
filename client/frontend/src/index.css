@@ -8,3 +8,13 @@ body {
 .ele .filter-bar{
   z-index: 1000;
 }
+.custom-select {
+  border-radius: 12px !important; /* Rounded field only */
+  font-weight: bold;
+  transition: box-shadow 0.2s ease;
+}
+
+.custom-select:focus {
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25); /* Optional focus glow */
+  font-weight: bold;
+}

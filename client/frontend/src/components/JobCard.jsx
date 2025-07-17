@@ -90,7 +90,7 @@ const JobCard = ({ job }) => {
 </div>
 
 
-          <h5 className="card-title">{job.title}</h5>
+          <h5 className="card-title fw-bold">{job.title}</h5>
 
         <div className="d-flex gap-3 mb-2 text-muted small align-items-center">
   <div className="d-flex align-items-center gap-1">

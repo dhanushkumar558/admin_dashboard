@@ -31,6 +31,8 @@
   flex-direction: column;
   margin-left: auto;
   width: 300px;
+  transform: translateY(-18px);
+
 }
 
 .salary-top-row {

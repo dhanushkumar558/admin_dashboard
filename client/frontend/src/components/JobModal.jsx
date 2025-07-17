@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const JobModal = ({ form, setForm, onSubmit, onClose }) => {
   const handleSubmit = () => {
@@ -10,16 +10,48 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
     onSubmit(updatedForm);
   };
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const fields = ['title', 'company', 'location', 'salary', 'deadline', 'experience', 'description'];
+
+      fields.forEach((field) => {
+        let value = form[field];
+        if (field === 'salary') {
+          value = form.salaryMin || form.salaryMax;
+        }
+        if (field === 'type' && value === 'Select') {
+          value = '';
+        }
+        const label = document.querySelector(`#label-${field}`);
+        if (label) {
+          label.classList.toggle('fw-bold', Boolean(value && value !== ''));
+        }
+      });
+    }, 0);
+
+    return () => clearTimeout(timeout);
+  }, [form]);
+
   const handleFocus = (field) => {
-    document.querySelectorAll('.form-label').forEach(label => label.classList.remove('fw-bold'));
-    document.querySelector(`#label-${field}`)?.classList.add('fw-bold');
+    
+
+    let value = field === 'salary' ? form.salaryMin || form.salaryMax : form[field];
+    if (field === 'type' && value === 'Select') value = '';
+
+    const label = document.querySelector(`#label-${field}`);
+    if (label && value && value !== '') {
+      label.classList.add('fw-bold');
+    }
   };
 
   return (
-    <div className="modal d-flex align-items-center justify-content-center show fade" tabIndex="-1" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.3)' }}>
+    <div
+      className="modal d-flex align-items-center justify-content-center show fade"
+      tabIndex="-1"
+      style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.3)' }}
+    >
       <div className="modal-dialog modal-dialog-centered modal-lg">
         <div className="modal-content p-4">
-
           {/* Close Button */}
           <button type="button" className="btn-close position-absolute end-0 top-0 m-3" aria-label="Close" onClick={onClose}></button>
 
@@ -34,7 +66,7 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
                 className="form-control"
                 value={form.title}
                 onFocus={() => handleFocus('title')}
-                onChange={e => setForm({ ...form, title: e.target.value })}
+                onChange={(e) => setForm({ ...form, title: e.target.value })}
               />
             </div>
             <div className="col-md-6">
@@ -44,7 +76,7 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
                 placeholder="Amazon, Microsoft, Swiggy"
                 value={form.company}
                 onFocus={() => handleFocus('company')}
-                onChange={e => setForm({ ...form, company: e.target.value })}
+                onChange={(e) => setForm({ ...form, company: e.target.value })}
               />
             </div>
           </div>
@@ -58,22 +90,27 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
                 placeholder="Choose Preferred Location"
                 value={form.location}
                 onFocus={() => handleFocus('location')}
-                onChange={e => setForm({ ...form, location: e.target.value })}
+                onChange={(e) => setForm({ ...form, location: e.target.value })}
               />
             </div>
-            <div className="col-md-6">
-              <label id="label-type" className="form-label">Job Type</label>
-              <select
-                className="form-select"
-                value={form.type}
-                onFocus={() => handleFocus('type')}
-                onChange={e => setForm({ ...form, type: e.target.value })}
-              >
-                <option>FullTime</option>
-                <option>Intern</option>
-                <option>PartTime</option>
-              </select>
-            </div>
+    <div className="col-md-6">
+  <label id="label-type" className="form-label">Job Type</label>
+  <select
+    className="form-select rounded-field"
+    value={form.type}
+    onFocus={() => handleFocus('type')}
+    onChange={(e) => setForm({ ...form, type: e.target.value })}
+  >
+   {/* ← ✅ placeholder */}
+       <option value="Internship">Internship</option>
+    <option value="FullTime">FullTime</option>
+    <option value="Parttime">Intern</option>
+    <option value="Contract">PartTime</option>
+  </select>
+</div>
+
+
+
           </div>
 
           {/* Row 3 */}
@@ -87,7 +124,7 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
                   placeholder="Min ₹"
                   value={form.salaryMin}
                   onFocus={() => handleFocus('salary')}
-                  onChange={e => setForm({ ...form, salaryMin: Number(e.target.value) })}
+                  onChange={(e) => setForm({ ...form, salaryMin: Number(e.target.value) })}
                 />
                 <input
                   className="form-control"
@@ -95,7 +132,7 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
                   placeholder="Max ₹"
                   value={form.salaryMax}
                   onFocus={() => handleFocus('salary')}
-                  onChange={e => setForm({ ...form, salaryMax: Number(e.target.value) })}
+                  onChange={(e) => setForm({ ...form, salaryMax: Number(e.target.value) })}
                 />
               </div>
             </div>
@@ -106,12 +143,12 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
                 type="date"
                 value={form.deadline}
                 onFocus={() => handleFocus('deadline')}
-                onChange={e => setForm({ ...form, deadline: e.target.value })}
+                onChange={(e) => setForm({ ...form, deadline: e.target.value })}
               />
             </div>
           </div>
 
-          {/* Experience - smaller */}
+          {/* Experience */}
           <div className="mb-3">
             <label id="label-experience" className="form-label">Experience</label>
             <input
@@ -119,7 +156,7 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
               placeholder="e.g. 1-3"
               value={form.experience}
               onFocus={() => handleFocus('experience')}
-              onChange={e => {
+              onChange={(e) => {
                 const val = e.target.value.replace(/\s*yr[s.]?$/i, '');
                 setForm({ ...form, experience: val });
               }}
@@ -140,11 +177,11 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
               placeholder="Please share a description to let the candidate know more about the job role"
               value={form.description}
               onFocus={() => handleFocus('description')}
-              onChange={e => setForm({ ...form, description: e.target.value })}
+              onChange={(e) => setForm({ ...form, description: e.target.value })}
             ></textarea>
           </div>
 
-          {/* Buttons */}
+          {/* Actions */}
           <div className="d-flex justify-content-between">
             <button className="btn btn-outline-secondary">Save Draft</button>
             <button className="btn btn-primary" onClick={handleSubmit}>Publish</button>
