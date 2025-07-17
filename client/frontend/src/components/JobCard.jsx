@@ -15,8 +15,10 @@ const JobCard = ({ job, index }) => {
     return `${diffDay}d ago`;
   };
 
-  const salaryLPA = job.salary_max ? (job.salary_max / 100000).toFixed(1) : 0;
-  const displaySalary = `₹${salaryLPA} LPA`;
+ const salaryRaw = job.salary_max ? job.salary_max / 100000 : 0;
+const salaryLPA = Number.isInteger(salaryRaw) ? salaryRaw : salaryRaw.toFixed(1);
+const displaySalary = `${salaryLPA}LPA`;
+
 
   return (
    <div className="jki" style={{ marginTop: index < 4 ? '4rem' : '0' }}>
