@@ -203,7 +203,18 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
 
 
 
-            <button className="btn btn-primary" onClick={handleSubmit}>Publish</button>
+          <button
+  type="submit"
+  onClick={handleSubmit}
+  className="btn btn-primary d-flex align-items-center justify-content-center gap-3"
+>
+  Publish
+  <span className="d-flex" style={{ marginLeft: '-3px' }}>
+    <i className="fas fa-chevron-right" style={{ fontSize: '12px' }}></i>
+    <i className="fas fa-chevron-right" style={{ fontSize: '12px', marginLeft: '-3px' }}></i>
+  </span>
+</button>
+
           </div>
         </div>
       </div>
