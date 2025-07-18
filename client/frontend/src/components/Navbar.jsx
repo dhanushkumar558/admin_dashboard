@@ -78,7 +78,7 @@ const Navbar = ({ onCreateClick }) => {
         {/* Create Job Button */}
         <button className="create-job-btn" onClick={onCreateClick}>
           Create Jobs
-        </button> 
+        </button>
       </div>
     </div>
   );
