@@ -72,3 +72,6 @@ select.form-select.rounded-field {
 {
   height: 150px;
 }
+input[type="date"]::placeholder {
+  color: transparent;
+}

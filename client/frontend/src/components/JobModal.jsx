@@ -144,13 +144,13 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
            <div className="col-md-6">
   <label id="label-deadline" className="form-label">Application Deadline</label>
   <input
-    className="form-control"
-    type="date"
-    value={form.deadline || ''}
-    onFocus={() => handleFocus('deadline')}
-    onChange={(e) => setForm({ ...form, deadline: e.target.value })}
-    placeholder="" // this line is optional, type="date" usually ignores it
-  />
+  className="form-control"
+  type="date"
+  value={form.deadline || ''}
+  onFocus={() => handleFocus('deadline')}
+  onChange={(e) => setForm({ ...form, deadline: e.target.value })}
+/>
+
 </div>
 
           </div>
