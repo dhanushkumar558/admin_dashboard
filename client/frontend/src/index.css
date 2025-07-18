@@ -68,3 +68,7 @@ select.form-select.rounded-field {
   font-weight: 500;
   color: #222;
 }
+.description-box
+{
+  height: 150px;
+}

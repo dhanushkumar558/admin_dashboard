@@ -179,7 +179,7 @@ const JobModal = ({ form, setForm, onSubmit, onClose }) => {
           <div className="mb-4">
             <label id="label-description" className="form-label">Job Description</label>
             <textarea
-              className="form-control"
+              className="form-control description-box"
               rows={4}
               placeholder="Please share a description to let the candidate know more about the job role"
               value={form.description}
